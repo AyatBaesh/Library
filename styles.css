@@ -1,0 +1,123 @@
+/* GENERAL */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.body {
+  max-width: 1000px;
+  margin: auto;
+  padding: auto;
+}
+/* HEADER */
+.header {
+  height: 150px;
+  box-shadow: 0px 15px 10px -15px #111;
+  background-color: rgba(160, 206, 217, 0.8);
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header > h1 {
+  padding-left: 1.5em;
+}
+
+/* MAIN-CONTAINER */
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  background-color: rgba(255, 238, 147, 0.5);
+}
+.book-card {
+  width: 550px;
+  height: 550px;
+  border-radius: 10px;
+  background-color: rgba(160, 206, 217, 0.8);
+  justify-self: center;
+  margin: 1.5em 0;
+  font-size: 32px;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* FORM */
+
+.form-container {
+  width: 500px;
+  height: 650px;
+  margin: auto;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-container > form {
+  background-color: rgba(235, 235, 231, 1);
+  border-radius: 10px;
+  font-size: 32px;
+  text-align: center;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
+}
+form > .exists {
+  color: red;
+  display: none;
+}
+form > input {
+  font-size: 24px;
+  font-weight: bold;
+  width: 80%;
+  justify-self: center;
+  margin: 0.5em;
+  border-radius: 10px;
+  padding: 1em;
+}
+form:first-child {
+  padding-top: 1em;
+}
+.row {
+  text-align: center;
+}
+
+.row > input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+}
+
+/* BUTTONS */
+
+.btn {
+  background-color: white;
+  border-radius: 10px;
+}
+.btn:hover {
+  background-color: rgba(173, 247, 182, 0.5);
+  cursor: pointer;
+}
+.btn:active {
+  background-color: rgb(173, 247, 182);
+}
+.book-card > .btn {
+  font-size: 32px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  padding: 0.5em 0;
+  margin: 0 0.5em;
+}
+
+.header > .btn {
+  padding: 1em;
+  margin-right: 1.5em;
+  background-color: rgba(231, 235, 231, 0);
+  border: none;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="scripts/index.js"></script>
+  </head>
+  <body>
+    <div class="form-container" id="formContainer">
+      <form>
+        <p class="exists">This book is already in the library</p>
+        <input
+          type="text"
+          name="book"
+          id="title"
+          placeholder="Book Title"
+          required
+        />
+        <input
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Book Author"
+          required
+        />
+        <input
+          type="number"
+          name="pages"
+          id="pages"
+          placeholder="Pages"
+          required
+        />
+        <div class="row">
+          <label for="read">Have you read it?</label>
+          <input type="checkbox" name="read" id="read" />
+        </div>
+        <input type="submit" value="Submit" id="submit" class="btn" />
+      </form>
+    </div>
+    <div class="header">
+      <h1>Library</h1>
+      <button id="addBook" class="btn">
+        <h1>Add book</h1>
+      </button>
+    </div>
+    <div class="main-container">
+      <div class="books">
+        <!-- <div class="book-card"></div>
+        <div class="book-card"></div>
+        <div class="book-card"></div>
+        <div class="book-card"></div>
+        <div class="book-card"></div>
+        <div class="book-card"></div> -->
+      </div>
+    </div>
+  </body>
+</html>

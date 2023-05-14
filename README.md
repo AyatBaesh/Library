@@ -1,0 +1,1 @@
+Simple app allowing to add and delete books locally. Made with purpose of practicing objects and objects constructor
