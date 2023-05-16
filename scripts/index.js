@@ -3,6 +3,7 @@ const submitButton = document.querySelector('#submit');
 const formContainer = document.querySelector('#formContainer');
 const books = document.querySelector('.books');
 const exists = document.querySelector('.exists');
+const overlay = document.querySelector('#overlay');
 let deleteButtons = [];
 let myLibrary =[];
 let id = 0;
@@ -87,6 +88,7 @@ function removeBook(deleteButton, id){
 
 addBook.addEventListener('click', () => {
     formContainer.style.display = 'grid';
+    overlay.style.display = 'block';
 });
 formContainer.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -109,11 +111,15 @@ formContainer.addEventListener('submit', (event) => {
     document.querySelector('#author').value='';
     document.querySelector('#pages').value = '';
     document.querySelector('#read').checked = false;
-    console.log(exists.style.display);
     if(exists.style.display === 'block'){
         return
     }
-    formContainer.style.display = "none";
+    formContainer.style.display = 'none';
+    overlay.style.display = 'none';
     id++;
 });
+overlay.onclick = () => {
+        formContainer.style.display = 'none';
+        overlay.style.display = 'none';
+}
 
