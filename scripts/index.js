@@ -12,13 +12,18 @@ function Book(title, author, pages, read, id){
     this.author = author,
     this.pages = pages,
     this.read = read,
-    this.id = id
-
+    this.id = id,
+    this.equals = function(book) {
+        if(this.title === book.title && this.author === book.author){
+            return true;
+        }
+        return false;
+    }
 }
 function addBookToLibrary(newBook){
     let alreadyExists = false;
     myLibrary.forEach((book) => {
-        if(book.title === newBook.title && book.author === newBook.author){
+        if(book.equals(newBook)){
             alreadyExists = true;
         };
     });
@@ -37,7 +42,7 @@ function addBookToLibrary(newBook){
                         <button class = "readStatus btn"></button>
                         <button class = "delete btn" id = "${newBook.id}">Remove</button>`
     let readStatus = bookCard.querySelector('.readStatus');
-    // deleteButtons.push(bookCard.querySelector('.delete'));
+
     switch (newBook.read){
         default:
             throw new Error('How did that happened?');
@@ -96,7 +101,6 @@ formContainer.addEventListener('submit', (event) => {
     deleteButtons = document.querySelectorAll('.delete');
     deleteButtons.forEach((button) => {
         button.addEventListener('click',() => {
-            console.log('remove clicked')
             let buttonId = button.getAttribute('id');
             removeBook(button, buttonId);
         })
@@ -111,6 +115,5 @@ formContainer.addEventListener('submit', (event) => {
     }
     formContainer.style.display = "none";
     id++;
-    console.log(`id:${id}`)
 });
 
