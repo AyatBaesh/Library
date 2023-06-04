@@ -8,13 +8,15 @@ let deleteButtons = [];
 let myLibrary =[];
 let id = 0;
 
-function Book(title, author, pages, read, id){
-    this.title = title,
-    this.author = author,
-    this.pages = pages,
-    this.read = read,
-    this.id = id,
-    this.equals = function(book) {
+class Book {
+    constructor(title, author, pages, read, id){
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+        this.id = id
+    }
+    equals (book) {
         if(this.title === book.title && this.author === book.author){
             return true;
         }
@@ -61,13 +63,11 @@ function addBookToLibrary(newBook){
     readStatus.addEventListener('click',(event) => {
         switch (readStatus.innerText){
             default:
-                console.log(readStatus.innerText);
                 throw new Error('How did that happened?');
             case 'Read': 
                 readStatus.innerText = 'Not read';
                 readStatus.style.backgroundColor = 'rgb(255, 192, 159)';
-                break;
-            
+                break;  
             case 'Not read': 
             readStatus.innerText = 'Read';
             readStatus.style.backgroundColor = 'rgb(173, 247, 182)';
@@ -77,15 +77,11 @@ function addBookToLibrary(newBook){
     });
     books.appendChild(bookCard);
 }
-
-console.log(`deleteButtons: ${deleteButtons}`)
-
 function removeBook(deleteButton, id){
     myLibrary = myLibrary.filter((book) => book.id != id);
     let parentBook = deleteButton.parentNode;
     books.removeChild(parentBook);
 }
-
 addBook.addEventListener('click', () => {
     formContainer.style.display = 'grid';
     overlay.style.display = 'block';
